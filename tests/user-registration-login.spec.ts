@@ -1,13 +1,16 @@
 import { test, expect } from "../src/fixtures/page.fixture";
+import { faker } from "@faker-js/faker";
 
 test.describe("User Registration and Login", () => {
-  const timestamp = Date.now();
   const testUser = {
-    firstName: "John",
-    lastName: "Doe",
-    email: `john.doe.${timestamp}@example.com`,
-    birthDate: "1990-01-01",
-    password: "SecurePass123!",
+    firstName: faker.person.firstName(),
+    lastName: faker.person.lastName(),
+    email: faker.internet.email(),
+    birthDate: faker.date
+      .birthdate({ min: 18, max: 65, mode: "age" })
+      .toISOString()
+      .split("T")[0],
+    password: `${faker.string.alphanumeric(8)}A1!`,
   };
 
   test("should successfully register a new user", async ({
