@@ -1,4 +1,4 @@
-import { test, expect } from "@playwright/test";
+import { test, expect } from "../src/fixtures/page.fixture";
 
 test.describe("User Registration and Login", () => {
   const timestamp = Date.now();
@@ -10,89 +10,75 @@ test.describe("User Registration and Login", () => {
     password: "SecurePass123!",
   };
 
-  test("should successfully register a new user", async ({ page }) => {
-    // Navigate to the homepage
-    await page.goto("/");
+  test("should successfully register a new user", async ({
+    page,
+    homePage,
+  }) => {
+    // Arrange
+    const expectedAlertText = "User created";
+    const registerPage = await homePage
+      .goto()
+      .then((home) => home.openUserDropdown())
+      .then((home) => home.clickRegister());
 
-    // Click on the user profile dropdown button
-    await page.getByTestId("btn-dropdown").click();
+    await expect(page).toHaveURL(registerPage.getExpectedUrl());
+    await expect(registerPage.getHeading()).toBeVisible();
 
-    // Click on "Register" link
-    await page.getByRole("link", { name: "Register" }).click();
+    // Act
+    await registerPage
+      .fillRegistrationForm(
+        testUser.firstName,
+        testUser.lastName,
+        testUser.email,
+        testUser.birthDate,
+        testUser.password
+      )
+      .then((register) => register.clickRegister());
 
-    // Verify we're on the registration page
-    await expect(page).toHaveURL(/.*register\.html/);
-    await expect(page.getByRole("heading", { name: "Register" })).toBeVisible();
-
-    // Fill in the registration form
-    await page
-      .getByPlaceholder("Enter User First Name")
-      .fill(testUser.firstName);
-    await page.getByPlaceholder("Enter User Last Name").fill(testUser.lastName);
-    await page.getByPlaceholder("Enter User Email").fill(testUser.email);
-    await page.getByPlaceholder("Enter Birth Date").fill(testUser.birthDate);
-
-    // Close the datepicker by pressing Escape
-    await page.keyboard.press("Escape");
-
-    await page.getByPlaceholder("Enter Password").fill(testUser.password);
-
-    // Select an avatar (keep the default selection)
-    // Avatar combobox already has a default selection
-
-    // Click the "Register" button
-    await page.getByRole("button", { name: "Register" }).click();
-
-    // Verify successful registration by checking for success alert
-    await expect(page.getByRole("alert")).toContainText("User created");
+    // Assert
+    await expect(registerPage.getAlert()).toContainText(expectedAlertText);
   });
 
   test("should successfully login with registered user credentials", async ({
     page,
+    homePage,
+    loginPage,
   }) => {
-    // First, register the user (prerequisite)
-    await page.goto("/");
-    await page.getByTestId("btn-dropdown").click();
-    await page.getByRole("link", { name: "Register" }).click();
-    await page
-      .getByPlaceholder("Enter User First Name")
-      .fill(testUser.firstName);
-    await page.getByPlaceholder("Enter User Last Name").fill(testUser.lastName);
-    await page.getByPlaceholder("Enter User Email").fill(testUser.email);
-    await page.getByPlaceholder("Enter Birth Date").fill(testUser.birthDate);
+    // Arrange
+    const expectedAlertText = "User created";
+    const registerPage = await homePage
+      .goto()
+      .then((home) => home.openUserDropdown())
+      .then((home) => home.clickRegister());
 
-    // Close the datepicker by pressing Escape
-    await page.keyboard.press("Escape");
+    await registerPage
+      .fillRegistrationForm(
+        testUser.firstName,
+        testUser.lastName,
+        testUser.email,
+        testUser.birthDate,
+        testUser.password
+      )
+      .then((register) => register.clickRegister());
 
-    await page.getByPlaceholder("Enter Password").fill(testUser.password);
-    await page.getByRole("button", { name: "Register" }).click();
+    await expect(registerPage.getAlert()).toContainText(expectedAlertText);
 
-    // Wait for success alert
-    await expect(page.getByRole("alert")).toContainText("User created");
+    await loginPage.goto();
+    await expect(page).toHaveURL(loginPage.getExpectedUrl());
+    await expect(loginPage.getHeading()).toBeVisible();
 
-    // Navigate to login page
-    await page.goto("/login");
+    // Act
+    const welcomePage = await loginPage
+      .fillLoginForm(testUser.email, testUser.password)
+      .then((login) => login.clickLogin());
 
-    // Verify we're on the login page
-    await expect(page).toHaveURL(/.*login/);
-    await expect(page.getByRole("heading", { name: "Login" })).toBeVisible();
-
-    // Fill in the login form
-    await page.getByPlaceholder("Enter User Email").fill(testUser.email);
-    await page.getByPlaceholder("Enter Password").fill(testUser.password);
-
-    // Optionally check "Keep me sign in" checkbox
-    await page.getByRole("checkbox", { name: /keep me sign in/i }).check();
-
-    // Click the "LogIn" button
-    await page.getByRole("button", { name: "LogIn" }).click();
-
-    // Verify successful login
-    // Check for redirection to welcome page
-    await expect(page).toHaveURL(/.*welcome/, { timeout: 10000 });
-
-    // Additional verification: check if user dropdown shows the user is logged in
-    await page.getByTestId("btn-dropdown").click();
-    await expect(page.locator("#username")).toContainText(testUser.firstName);
+    // Assert
+    await expect(page).toHaveURL(welcomePage.getExpectedUrl(), {
+      timeout: 10000,
+    });
+    await welcomePage.openUserDropdown();
+    await expect(welcomePage.getUsernameElement()).toContainText(
+      testUser.firstName
+    );
   });
 });
