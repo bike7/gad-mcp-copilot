@@ -24,10 +24,7 @@ export class LoginPage extends BasePage {
     this.loginButton = this.page.getByRole("button", { name: "LogIn" });
   }
 
-  async fillLoginForm(
-    testUser: User,
-    keepSignedIn = true
-  ): Promise<this> {
+  async fillLoginForm(testUser: User, keepSignedIn = true): Promise<this> {
     return await step("Fill login form", async () => {
       await this.emailInput.fill(testUser.email);
       await this.passwordInput.fill(testUser.password);
@@ -45,7 +42,7 @@ export class LoginPage extends BasePage {
     });
   }
 
-  getHeading(): Locator {
+  getPageHeading(): Locator {
     return this.heading;
   }
 }

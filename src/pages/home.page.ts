@@ -5,6 +5,7 @@ import { RegisterPage } from "./register.page";
 import { LoginPage } from "./login.page";
 
 export class HomePage extends BasePage {
+  private readonly heading: Locator;
   private readonly dropdownButton: Locator;
   private readonly loginLink: Locator;
   private readonly registerLink: Locator;
@@ -13,6 +14,7 @@ export class HomePage extends BasePage {
     super(page);
     this.url = "/";
     this.expectedUrl = /.*\//;
+    this.heading = this.page.getByRole("heading", { name: "Welcome on" });
     this.dropdownButton = this.page.getByTestId("btn-dropdown");
     this.loginLink = this.page.getByRole("link", { name: "Login" });
     this.registerLink = this.page.getByRole("link", { name: "Register" });
@@ -37,5 +39,9 @@ export class HomePage extends BasePage {
       await this.registerLink.click();
       return new RegisterPage(this.page);
     });
+  }
+
+    getPageHeading(): Locator {
+    return this.heading;
   }
 }

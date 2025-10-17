@@ -5,6 +5,7 @@ import { RegisterPage } from "../pages/register.page";
 
 type PageFixtures = {
   homePage: HomePage;
+  loginPage: LoginPage;
   registerPage: RegisterPage;
 };
 
@@ -12,6 +13,10 @@ export const test = base.extend<PageFixtures>({
   homePage: async ({ page }, use) => {
     const homePage = new HomePage(page);
     await use(homePage);
+  },
+  loginPage: async ({ page }, use) => {
+    const loginPage = new LoginPage(page);
+    await use(loginPage);
   },
   registerPage: async ({ page }, use) => {
     const registerPage = new RegisterPage(page);

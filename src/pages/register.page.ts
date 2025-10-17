@@ -45,7 +45,7 @@ export class RegisterPage extends BasePage {
     });
   }
 
-  getHeading(): Locator {
+  getPageHeading(): Locator {
     return this.heading;
   }
 }
