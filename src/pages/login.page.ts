@@ -2,6 +2,7 @@ import { Page, Locator } from "@playwright/test";
 import { step } from "allure-js-commons";
 import { BasePage } from "./base.page";
 import { WelcomePage } from "./welcome.page";
+import { User } from "../models/user.model";
 
 export class LoginPage extends BasePage {
   private readonly heading: Locator;
@@ -24,13 +25,12 @@ export class LoginPage extends BasePage {
   }
 
   async fillLoginForm(
-    email: string,
-    password: string,
+    testUser: User,
     keepSignedIn = true
   ): Promise<this> {
     return await step("Fill login form", async () => {
-      await this.emailInput.fill(email);
-      await this.passwordInput.fill(password);
+      await this.emailInput.fill(testUser.email);
+      await this.passwordInput.fill(testUser.password);
       if (keepSignedIn) {
         await this.keepMeSignedInCheckbox.check();
       }

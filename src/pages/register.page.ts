@@ -1,6 +1,8 @@
-import { Page, Locator } from "@playwright/test";
+import test, { Page, Locator } from "@playwright/test";
 import { step } from "allure-js-commons";
 import { BasePage } from "./base.page";
+import { LoginPage } from "./login.page";
+import { User } from "../models/user.model";
 
 export class RegisterPage extends BasePage {
   private readonly heading: Locator;
@@ -24,28 +26,22 @@ export class RegisterPage extends BasePage {
     this.registerButton = this.page.getByRole("button", { name: "Register" });
   }
 
-  async fillRegistrationForm(
-    firstName: string,
-    lastName: string,
-    email: string,
-    birthDate: string,
-    password: string
-  ): Promise<this> {
+  async fillRegistrationForm(testUser: User): Promise<this> {
     return await step("Fill registration form", async () => {
-      await this.firstNameInput.fill(firstName);
-      await this.lastNameInput.fill(lastName);
-      await this.emailInput.fill(email);
-      await this.birthDateInput.fill(birthDate);
+      await this.firstNameInput.fill(testUser.firstName);
+      await this.lastNameInput.fill(testUser.lastName);
+      await this.emailInput.fill(testUser.email);
+      await this.birthDateInput.fill(testUser.birthDate);
       await this.page.keyboard.press("Escape");
-      await this.passwordInput.fill(password);
+      await this.passwordInput.fill(testUser.password);
       return this;
     });
   }
 
-  async clickRegister(): Promise<this> {
+  async clickRegister(): Promise<LoginPage> {
     return await step("Click Register button", async () => {
       await this.registerButton.click();
-      return this;
+      return new LoginPage(this.page);
     });
   }
 

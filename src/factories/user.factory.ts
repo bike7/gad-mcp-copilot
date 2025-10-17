@@ -1,18 +1,12 @@
 import { faker } from "@faker-js/faker";
-
-export interface User {
-  firstName: string;
-  lastName: string;
-  email: string;
-  birthDate: string;
-  password: string;
-}
-
+import { User } from "../models/user.model";
 export class UserFactory {
   static createTestUser(): User {
+    const firstName = faker.person.firstName().replace(/[^A-Za-z]/g, "");
+    const lastName = faker.person.lastName().replace(/[^A-Za-z]/g, "");
     return {
-      firstName: faker.person.firstName(),
-      lastName: faker.person.lastName(),
+      firstName,
+      lastName,
       email: faker.internet.email(),
       birthDate: faker.date
         .birthdate({ min: 18, max: 65, mode: "age" })
