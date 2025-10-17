@@ -1,4 +1,5 @@
 import { defineConfig, devices } from "@playwright/test";
+export const DEBUGGING_PORT = 9222;
 export default defineConfig({
   testDir: "./tests",
   fullyParallel: true,
@@ -16,8 +17,21 @@ export default defineConfig({
 
   projects: [
     {
-      name: "chromium",
-      use: { ...devices["Desktop Chrome"] },
+      name: "functional",
+      testDir: "./tests/functional",
+      use: {
+        ...devices["Desktop Chrome"],
+      },
+    },
+    {
+      name: "nonfunctional",
+      testDir: "./tests/nonfunctional",
+      use: {
+        ...devices["Desktop Chrome"],
+        launchOptions: {
+          args: [`--remote-debugging-port=${DEBUGGING_PORT}`],
+        },
+      },
     },
   ],
 });
