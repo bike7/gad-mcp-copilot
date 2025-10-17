@@ -1,4 +1,5 @@
 import { Page, Locator } from "@playwright/test";
+import { step } from "allure-js-commons";
 import { BasePage } from "./base.page";
 
 export class RegisterPage extends BasePage {
@@ -30,18 +31,22 @@ export class RegisterPage extends BasePage {
     birthDate: string,
     password: string
   ): Promise<this> {
-    await this.firstNameInput.fill(firstName);
-    await this.lastNameInput.fill(lastName);
-    await this.emailInput.fill(email);
-    await this.birthDateInput.fill(birthDate);
-    await this.page.keyboard.press("Escape");
-    await this.passwordInput.fill(password);
-    return this;
+    return await step("Fill registration form", async () => {
+      await this.firstNameInput.fill(firstName);
+      await this.lastNameInput.fill(lastName);
+      await this.emailInput.fill(email);
+      await this.birthDateInput.fill(birthDate);
+      await this.page.keyboard.press("Escape");
+      await this.passwordInput.fill(password);
+      return this;
+    });
   }
 
   async clickRegister(): Promise<this> {
-    await this.registerButton.click();
-    return this;
+    return await step("Click Register button", async () => {
+      await this.registerButton.click();
+      return this;
+    });
   }
 
   getHeading(): Locator {

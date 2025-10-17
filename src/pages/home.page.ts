@@ -1,4 +1,5 @@
 import { Page, Locator } from "@playwright/test";
+import { step } from "allure-js-commons";
 import { BasePage } from "./base.page";
 import { RegisterPage } from "./register.page";
 import { LoginPage } from "./login.page";
@@ -18,17 +19,23 @@ export class HomePage extends BasePage {
   }
 
   async openUserDropdown(): Promise<this> {
-    await this.dropdownButton.click();
-    return this;
+    return await step("Open user dropdown menu", async () => {
+      await this.dropdownButton.click();
+      return this;
+    });
   }
 
   async clickLogin(): Promise<LoginPage> {
-    await this.loginLink.click();
-    return new LoginPage(this.page);
+    return await step("Click on Login link", async () => {
+      await this.loginLink.click();
+      return new LoginPage(this.page);
+    });
   }
 
   async clickRegister(): Promise<RegisterPage> {
-    await this.registerLink.click();
-    return new RegisterPage(this.page);
+    return await step("Click on Register link", async () => {
+      await this.registerLink.click();
+      return new RegisterPage(this.page);
+    });
   }
 }

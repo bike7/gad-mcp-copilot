@@ -1,4 +1,5 @@
 import { Page, Locator } from "@playwright/test";
+import { step } from "allure-js-commons";
 import { BasePage } from "./base.page";
 import { WelcomePage } from "./welcome.page";
 
@@ -27,17 +28,21 @@ export class LoginPage extends BasePage {
     password: string,
     keepSignedIn = true
   ): Promise<this> {
-    await this.emailInput.fill(email);
-    await this.passwordInput.fill(password);
-    if (keepSignedIn) {
-      await this.keepMeSignedInCheckbox.check();
-    }
-    return this;
+    return await step("Fill login form", async () => {
+      await this.emailInput.fill(email);
+      await this.passwordInput.fill(password);
+      if (keepSignedIn) {
+        await this.keepMeSignedInCheckbox.check();
+      }
+      return this;
+    });
   }
 
   async clickLogin(): Promise<WelcomePage> {
-    await this.loginButton.click();
-    return new WelcomePage(this.page);
+    return await step("Click Login button", async () => {
+      await this.loginButton.click();
+      return new WelcomePage(this.page);
+    });
   }
 
   getHeading(): Locator {

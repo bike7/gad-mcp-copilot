@@ -1,4 +1,5 @@
 import { Page, Locator } from "@playwright/test";
+import { step } from "allure-js-commons";
 
 export class BasePage {
   protected url: string;
@@ -12,8 +13,10 @@ export class BasePage {
   }
 
   async goto(): Promise<this> {
-    await this.page.goto(this.url);
-    return this;
+    return await step(`Navigate to ${typeof(this)}`, async () => {
+      await this.page.goto(this.url);
+      return this;
+    });
   }
 
   getExpectedUrl(): RegExp {

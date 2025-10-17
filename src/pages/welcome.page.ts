@@ -1,4 +1,5 @@
 import { Page, Locator } from "@playwright/test";
+import { step } from "allure-js-commons";
 import { BasePage } from "./base.page";
 
 export class WelcomePage extends BasePage {
@@ -14,8 +15,10 @@ export class WelcomePage extends BasePage {
   }
 
   async openUserDropdown(): Promise<this> {
-    await this.dropdownButton.click();
-    return this;
+    return await step("Open user dropdown menu", async () => {
+      await this.dropdownButton.click();
+      return this;
+    });
   }
 
   getUsernameElement(): Locator {
