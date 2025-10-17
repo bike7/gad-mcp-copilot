@@ -15,7 +15,7 @@ export class BasePage {
   }
 
   async goto(): Promise<this> {
-    return await step(`Navigate to ${typeof(this)}`, async () => {
+    return await step(`Navigate to ${this.constructor.name}`, async () => {
       await this.page.goto(this.url);
       return this;
     });
