@@ -1,24 +1,14 @@
 import { test, expect } from "../src/fixtures/page.fixture";
-import { faker } from "@faker-js/faker";
+import { UserFactory } from "../src/factories/user.factory";
 
 test.describe("User Registration and Login", () => {
-  const testUser = {
-    firstName: faker.person.firstName(),
-    lastName: faker.person.lastName(),
-    email: faker.internet.email(),
-    birthDate: faker.date
-      .birthdate({ min: 18, max: 65, mode: "age" })
-      .toISOString()
-      .split("T")[0],
-    password: `${faker.string.alphanumeric(8)}A1!`,
-  };
-
   test("should successfully register a new user", async ({
     page,
     homePage,
   }) => {
     // Arrange
     const expectedAlertText = "User created";
+    const testUser = UserFactory.createTestUser();
     const registerPage = await homePage
       .goto()
       .then((home) => home.openUserDropdown())
@@ -49,6 +39,7 @@ test.describe("User Registration and Login", () => {
   }) => {
     // Arrange
     const expectedAlertText = "User created";
+    const testUser = UserFactory.createTestUser();
     const registerPage = await homePage
       .goto()
       .then((home) => home.openUserDropdown())
