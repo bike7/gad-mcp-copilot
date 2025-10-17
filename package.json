@@ -5,12 +5,13 @@
   "main": "index.js",
   "scripts": {
     "test": "playwright test",
-    "test:allure": "playwright test && npm run allure:generate",
-    "test:lighthouse": "playwright test tests/nonfunctional/performance.spec.ts && npm run lighthouse:report",
-    "allure:generate": "allure generate allure-results --clean -o allure-report",
-    "allure:open": "allure open allure-report",
-    "lighthouse:report": "node scripts/generate-lighthouse-report.js",
-    "lighthouse:open": "start lighthouse-reports\\consolidated-report.html"
+    "test:functional": "npx playwright test --project=functional",
+    "test:nonfunctional": "npx playwright test --project=nonfunctional",
+    "report:playwright:open": "npx playwright show-report",
+    "report:allure:generate": "allure generate allure-results --clean -o allure-report",
+    "report:allure:open": "allure open allure-report",
+    "report:lighthouse:generate": "node scripts/generate-lighthouse-report.js",
+    "report:lighthouse:open": "start lighthouse-reports\\consolidated-report.html"
   },
   "keywords": [],
   "author": "",
