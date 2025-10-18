@@ -85,30 +85,38 @@ const consolidatedHtml = `
 <body>
     <div class="reports-container">
         <h1>Lighthouse Performance Reports</h1>
-        ${pages.map(pageName => {
+        ${pages
+          .map((pageName) => {
             try {
-                const jsonPath = path.join(reportsDir, `lighthouse-report-${pageName}.json`);
-                const reportData = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
-                const categories = reportData.categories;
-                
-                const getScoreClass = (score) => {
-                    if (score >= 0.9) return 'score-good';
-                    if (score >= 0.5) return 'score-average';
-                    return 'score-poor';
-                };
-                
-                return `
+              const jsonPath = path.join(
+                reportsDir,
+                `lighthouse-report-${pageName}.json`
+              );
+              const reportData = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
+              const categories = reportData.categories;
+
+              const getScoreClass = (score) => {
+                if (score >= 0.9) return 'score-good';
+                if (score >= 0.5) return 'score-average';
+                return 'score-poor';
+              };
+
+              return `
                     <div class="report-summary">
-                        <h2>${pageName.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}</h2>
+                        <h2>${pageName.replace(/-/g, ' ').replace(/\b\w/g, (l) => l.toUpperCase())}</h2>
                         <div class="scores">
-                            ${Object.entries(categories).map(([key, data]) => `
+                            ${Object.entries(categories)
+                              .map(
+                                ([key, data]) => `
                                 <div class="score-card">
                                     <div class="score-label">${data.title}</div>
                                     <div class="score-value ${getScoreClass(data.score)}">
                                         ${Math.round(data.score * 100)}
                                     </div>
                                 </div>
-                            `).join('')}
+                            `
+                              )
+                              .join('')}
                         </div>
                         <a href="lighthouse-report-${pageName}.html" class="view-link" target="_blank">
                             View Detailed Report
@@ -116,9 +124,10 @@ const consolidatedHtml = `
                     </div>
                 `;
             } catch (error) {
-                return `<div class="report-summary"><h2>${pageName}</h2><p>Report not found</p></div>`;
+              return `<div class="report-summary"><h2>${pageName}</h2><p>Report not found</p></div>`;
             }
-        }).join('')}
+          })
+          .join('')}
         <div class="timestamp">
             Generated: ${new Date().toLocaleString()}
         </div>
@@ -127,5 +136,10 @@ const consolidatedHtml = `
 </html>
 `;
 
-fs.writeFileSync(path.join(reportsDir, 'consolidated-report.html'), consolidatedHtml);
-console.log('Consolidated report generated: lighthouse-reports/consolidated-report.html');
+fs.writeFileSync(
+  path.join(reportsDir, 'consolidated-report.html'),
+  consolidatedHtml
+);
+console.log(
+  'Consolidated report generated: lighthouse-reports/consolidated-report.html'
+);

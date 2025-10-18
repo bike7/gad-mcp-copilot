@@ -1,15 +1,12 @@
-import { test, expect } from "../../../src/fixtures/page.fixture";
-import { UserFactory } from "../../../src/factories/user.factory";
-import { feature, step, suite } from "allure-js-commons";
+import { UserFactory } from '../../../src/factories/user.factory';
+import { expect, test } from '../../../src/fixtures/page.fixture';
+import { feature, step, suite } from 'allure-js-commons';
 
-test.describe("User Login End-to-End", () => {
-  test("Should register and login a new user", async ({
-    page,
-    homePage,
-  }) => {
-    await suite("End To End Tests");
+test.describe('User Login End-to-End', () => {
+  test('Should register and login a new user', async ({ page, homePage }) => {
+    await suite('End To End Tests');
     // Arrange
-    const expectedAlertText = "User created";
+    const expectedAlertText = 'User created';
     const testUser = UserFactory.createTestUser();
 
     // Act - Registration
@@ -19,10 +16,10 @@ test.describe("User Login End-to-End", () => {
     await registerPage.fillRegistrationForm(testUser);
     const loginPage = await registerPage.clickRegister();
     // Assert - Registration
-    await step("Verify user registration is successful", async () => {
+    await step('Verify user registration is successful', async () => {
       await expect(registerPage.getAlert()).toContainText(expectedAlertText);
     });
-    await step("Verify login page is loaded", async () => {
+    await step('Verify login page is loaded', async () => {
       await expect(page).toHaveURL(loginPage.getExpectedUrl());
       await expect(loginPage.getPageHeading()).toBeVisible();
     });
@@ -31,7 +28,7 @@ test.describe("User Login End-to-End", () => {
     const welcomePage = await loginPage.clickLogin();
 
     // Assert - Login
-    await step("Verify user is successfully logged in", async () => {
+    await step('Verify user is successfully logged in', async () => {
       await expect(page).toHaveURL(welcomePage.getExpectedUrl(), {
         timeout: 10000,
       });

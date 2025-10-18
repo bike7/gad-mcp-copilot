@@ -1,6 +1,6 @@
-import { Page, Locator } from "@playwright/test";
-import { step } from "allure-js-commons";
-import { BasePage } from "./base.page";
+import { BasePage } from './base.page';
+import { Locator, Page } from '@playwright/test';
+import { step } from 'allure-js-commons';
 
 export class WelcomePage extends BasePage {
   private readonly dropdownButton: Locator;
@@ -8,14 +8,14 @@ export class WelcomePage extends BasePage {
 
   constructor(page: Page) {
     super(page);
-    this.url = "/welcome";
+    this.url = '/welcome';
     this.expectedUrl = /.*welcome/;
-    this.dropdownButton = this.page.getByTestId("btn-dropdown");
-    this.usernameElement = this.page.locator("#username");
+    this.dropdownButton = this.page.getByTestId('btn-dropdown');
+    this.usernameElement = this.page.locator('#username');
   }
 
   async openUserDropdown(): Promise<this> {
-    return await step("Open user dropdown menu", async () => {
+    return await step('Open user dropdown menu', async () => {
       await this.dropdownButton.click();
       return this;
     });

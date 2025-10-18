@@ -1,5 +1,5 @@
-import { Page } from "@playwright/test";
-import { DEBUGGING_PORT } from "../../playwright.config";
+import { DEBUGGING_PORT } from '../../playwright.config';
+import { Page } from '@playwright/test';
 
 export class LighthouseHelper {
   static async runAudit(
@@ -8,18 +8,18 @@ export class LighthouseHelper {
     thresholds = {
       performance: 50,
       accessibility: 50,
-      "best-practices": 50,
+      'best-practices': 50,
       seo: 50,
     }
   ) {
-    const { playAudit } = await import("playwright-lighthouse");
+    const { playAudit } = await import('playwright-lighthouse');
 
     await playAudit({
       page,
       thresholds,
       port: DEBUGGING_PORT,
       opts: {
-        formFactor: "desktop",
+        formFactor: 'desktop',
         screenEmulation: {
           mobile: false,
           width: 1920,
@@ -34,7 +34,7 @@ export class LighthouseHelper {
           json: true,
         },
         name: `lighthouse-report-${pageName}`,
-        directory: "./lighthouse-reports",
+        directory: './lighthouse-reports',
       },
     });
   }

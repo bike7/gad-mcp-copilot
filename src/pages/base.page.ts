@@ -1,5 +1,5 @@
-import { Page, Locator } from "@playwright/test";
-import { step } from "allure-js-commons";
+import { Locator, Page } from '@playwright/test';
+import { step } from 'allure-js-commons';
 
 export class BasePage {
   protected url: string;
@@ -8,10 +8,10 @@ export class BasePage {
   protected readonly alert: Locator;
 
   constructor(protected page: Page) {
-    this.url = "";
+    this.url = '';
     this.expectedUrl = /.*/;
-    this.expectedPageHeader = "";
-    this.alert = this.page.getByRole("alert");
+    this.expectedPageHeader = '';
+    this.alert = this.page.getByRole('alert');
   }
 
   async goto(): Promise<this> {
