@@ -1,7 +1,7 @@
 import { User } from '../models/user.model';
 import { BasePage } from './base.page';
 import { LoginPage } from './login.page';
-import test, { Locator, Page } from '@playwright/test';
+import { Locator, Page } from '@playwright/test';
 import { step } from 'allure-js-commons';
 
 export class RegisterPage extends BasePage {

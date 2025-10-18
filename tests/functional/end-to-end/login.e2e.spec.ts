@@ -1,6 +1,6 @@
 import { UserFactory } from '../../../src/factories/user.factory';
 import { expect, test } from '../../../src/fixtures/page.fixture';
-import { feature, step, suite } from 'allure-js-commons';
+import { step, suite } from 'allure-js-commons';
 
 test.describe('User Login End-to-End', () => {
   test('Should register and login a new user', async ({ page, homePage }) => {

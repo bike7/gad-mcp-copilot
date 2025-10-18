@@ -1,7 +1,5 @@
 import { expect, test } from '../../../src/fixtures/page.fixture';
-import { LoginPage } from '../../../src/pages/login.page';
-import { RegisterPage } from '../../../src/pages/register.page';
-import { feature, step, suite } from 'allure-js-commons';
+import { step, suite } from 'allure-js-commons';
 
 // Smoke tests for basic navigation and page load
 
