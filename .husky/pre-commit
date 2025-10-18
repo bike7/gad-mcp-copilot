@@ -1,0 +1,2 @@
+npm run format:prettier:check
+npm run format:lint:check

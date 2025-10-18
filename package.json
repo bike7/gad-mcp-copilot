@@ -12,10 +12,11 @@
     "report:allure:open": "allure open allure-report",
     "report:lighthouse:generate": "node scripts/generate-lighthouse-report.js",
     "report:lighthouse:open": "start lighthouse-reports\\consolidated-report.html",
-    "format:prettier:execute": "prettier --write .",
+    "format:prettier:fix": "prettier --write .",
     "format:prettier:check": "prettier --check .",
-    "lint": "eslint . --ext .ts,.js",
-    "lint:fix": "eslint . --ext .ts,.js --fix"
+    "format:lint:check": "eslint . --ext .ts,.js",
+    "format:lint:fix": "eslint . --ext .ts,.js --fix",
+    "prepare": "husky"
   },
   "keywords": [],
   "author": "",
@@ -35,6 +36,7 @@
     "eslint-plugin-playwright": "^2.2.2",
     "eslint-plugin-prettier": "^5.5.4",
     "globals": "^16.4.0",
+    "husky": "^9.1.7",
     "lighthouse": "^12.8.2",
     "playwright-lighthouse": "^4.0.0",
     "prettier": "^3.6.2"
