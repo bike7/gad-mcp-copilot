@@ -1,6 +1,8 @@
 import { DEBUGGING_PORT } from '../../playwright.config';
+import { ReportHelper } from './report.helper';
 import { Page } from '@playwright/test';
 
+const LIGHTHOUSE_REPORT_DIRECTORY = './lighthouse-reports';
 export interface LighthouseMetrics {
   performance: number;
   accessibility: number;
@@ -24,8 +26,8 @@ export class LighthouseHelper {
     thresholds: LighthouseMetrics
   ): Promise<Partial<LighthouseMetrics>> {
     const { playAudit } = await import('playwright-lighthouse');
-    const pageName = LighthouseHelper.extractPageNameFromUrl(page);
-
+    const pageName = ReportHelper.extractPageNameFromUrl(page);
+    const reportFileName = `lighthouse-report-${pageName}-page`;
     const result = await playAudit({
       page,
       thresholds: {
@@ -50,10 +52,14 @@ export class LighthouseHelper {
           html: true,
           json: true,
         },
-        name: `lighthouse-report-${pageName}`,
-        directory: './lighthouse-reports',
+        name: reportFileName,
+        directory: LIGHTHOUSE_REPORT_DIRECTORY,
       },
     });
+    ReportHelper.attachToPlaywrightReport(
+      reportFileName,
+      `${LIGHTHOUSE_REPORT_DIRECTORY}/${reportFileName}.html`
+    );
 
     const categories = (result as PlaywrightLighthouseResult).lhr.categories;
 
@@ -69,12 +75,5 @@ export class LighthouseHelper {
         : undefined,
       seo: categories['seo']?.score ? categories['seo'].score * 100 : undefined,
     };
-  }
-
-  private static extractPageNameFromUrl(page: Page): string {
-    const url = new URL(page.url());
-    const pathname = url.pathname.replace(/\/$/, '');
-    const pageName = pathname === '' ? 'home' : pathname.slice(1);
-    return pageName;
   }
 }
