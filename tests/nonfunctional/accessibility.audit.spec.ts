@@ -5,9 +5,7 @@ import { RegisterPage } from '../../src/pages/register.page';
 import { expect, test } from '@playwright/test';
 
 test.describe('Accessibility Audit', () => {
-  test('Home Page should meet accessibility standards', async ({
-    page,
-  }) => {
+  test('Home Page should meet accessibility standards', async ({ page }) => {
     //Arrange
     const maxAllowedViolations = 20;
     const maxCriticalViolations = 1;
@@ -28,9 +26,7 @@ test.describe('Accessibility Audit', () => {
       .toBeLessThanOrEqual(maxCriticalViolations);
   });
 
-  test('Login Page should meet accessibility standards', async ({
-    page,
-  }) => {
+  test('Login Page should meet accessibility standards', async ({ page }) => {
     //Arrange
     const maxAllowedViolations = 25;
     const maxCriticalViolations = 2;
