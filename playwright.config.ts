@@ -3,6 +3,7 @@ import { defineConfig, devices } from '@playwright/test';
 export const DEBUGGING_PORT = 9222;
 export default defineConfig({
   testDir: './tests',
+  snapshotPathTemplate: '{testDir}/snapshots/{arg}{ext}',
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
