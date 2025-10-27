@@ -19,6 +19,9 @@ package-lock.json
 .vscode/
 .idea/
 
+# Github
+.github/
+
 # OS
 .DS_Store
 Thumbs.db
