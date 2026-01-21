@@ -2,6 +2,11 @@
 
 A comprehensive end-to-end testing framework built with Playwright, featuring functional and non-functional tests, multiple reporting options and accessibility testing capabilities.
 
+## GAD Application
+
+Repository: https://github.com/jaktestowac/gad-gui-api-demo
+Follow instructions in app README
+
 ## Features
 
 - 🎭 **Playwright-based** testing framework
