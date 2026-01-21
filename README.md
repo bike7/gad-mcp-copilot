@@ -5,13 +5,16 @@ A comprehensive end-to-end testing framework built with Playwright, featuring fu
 ## Features
 
 - 🎭 **Playwright-based** testing framework
-- 🧪 **Functional & Non-functional** test suites
+- 🧪 **Comprehensive test suites**:
+  - **Functional tests**: Smoke tests, integration tests, and end-to-end (E2E) tests validating application behavior and user workflows
+  - **Non-functional tests**: Performance testing, accessibility audits and quality metrics, visual testing and snapshots
 - 📊 **Multiple reporting options**:
   - Allure Reports
   - Lighthouse Performance Reports
   - Accessibility Reports (axe-core)
   - Native Playwright HTML Reports
 - 👁️ **Visual testing** with screenshot comparison
+- 🤖 **AI-assisted development** using GitHub Copilot chatmodes (Planner, Generator, Healer) for test creation and planning
 - 🏭 **Factory pattern** Faker for test data generation
 - 📄 **Page Object Model** for maintainable test structure
 - 🔧 **TypeScript** support for type safety
