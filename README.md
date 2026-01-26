@@ -2,6 +2,10 @@
 
 A comprehensive end-to-end testing framework built with Playwright, featuring functional and non-functional tests, multiple reporting options and accessibility testing capabilities.
 
+[![Playwright CI](https://github.com/bike7/gad-mcp-copilot/actions/workflows/playwright.yml/badge.svg)](
+https://github.com/bike7/gad-mcp-copilot/actions/workflows/playwright.yml
+)
+
 ## GAD Application
 
 Repository: https://github.com/jaktestowac/gad-gui-api-demo
