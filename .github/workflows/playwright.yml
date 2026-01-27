@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   checks: write
   id-token: write  
 
@@ -64,8 +64,25 @@ jobs:
         run: |
           npm run test:functional
           
+      - name: Archive Test Results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-reports
+          path: |
+            **/playwright-report/** 
+            **/test-results/**
+            **/allure-results/**
+            
       - name: Publish Test Report
         uses: mikepenz/action-junit-report@v5
         if: always()
         with:
           report_paths: '**/playwright-report/results.xml'                    
+
+      - name: Deploy report to github pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./allure-results
+          publish_branch: gh-pages
