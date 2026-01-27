@@ -64,6 +64,10 @@ jobs:
         run: |
           npm run test:functional
           
+      - name: Generate Allure Report
+        run: |
+          npm run report:allure:generate
+          
       - name: Archive Test Results
         if: always()
         uses: actions/upload-artifact@v4
