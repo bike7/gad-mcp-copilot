@@ -4,6 +4,8 @@
 https://github.com/bike7/gad-mcp-copilot/actions/workflows/playwright.yml
 )
 
+Link to report: (Playwright report)[https://bike7.github.io/gad-mcp-copilot/]
+
 A comprehensive end-to-end testing framework built with Playwright, featuring functional and non-functional tests, multiple reporting options and accessibility testing capabilities.
 
 ## GAD Application
