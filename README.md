@@ -2,7 +2,7 @@
 
 [![Playwright CI](https://github.com/bike7/gad-mcp-copilot/actions/workflows/playwright.yml/badge.svg)](https://github.com/bike7/gad-mcp-copilot/actions/workflows/playwright.yml)
 
-Link to report: [Playwright report](https://bike7.github.io/gad-mcp-copilot/)
+Links to reports: [ Playwright report ](https://bike7.github.io/gad-mcp-copilot/playwright/) [ Allure Report ](https://bike7.github.io/gad-mcp-copilot/allure/)
 
 A comprehensive end-to-end testing framework built with Playwright, featuring functional and non-functional tests, multiple reporting options and accessibility testing capabilities.
 
