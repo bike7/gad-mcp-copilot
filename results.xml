@@ -1,0 +1,43 @@
+<testsuites id="" name="" tests="5" failures="0" skipped="0" errors="0" time="12.096141000000001">
+<testsuite name="functional/end-to-end/login.e2e.spec.ts" timestamp="2026-01-27T14:46:29.177Z" hostname="functional" tests="1" failures="0" skipped="0" time="6.555" errors="0">
+<testcase name="User Login End-to-End › Should register and login a new user" classname="functional/end-to-end/login.e2e.spec.ts" time="6.555">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/end-to-end-login.e2e-User--18476-gister-and-login-a-new-user-functional/trace.zip]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="functional/integration/registration.integration.spec.ts" timestamp="2026-01-27T14:46:29.177Z" hostname="functional" tests="1" failures="0" skipped="0" time="1.999" errors="0">
+<testcase name="User Registration › Should register a new user" classname="functional/integration/registration.integration.spec.ts" time="1.999">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/integration-registration.i-80c11--Should-register-a-new-user-functional/trace.zip]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="functional/smoke/smoke.spec.ts" timestamp="2026-01-27T14:46:29.177Z" hostname="functional" tests="3" failures="0" skipped="0" time="0.651" errors="0">
+<testcase name="Main Pages Smoke tests › Should load Home page" classname="functional/smoke/smoke.spec.ts" time="0.21">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/smoke-smoke-Main-Pages-Smoke-tests-Should-load-Home-page-functional/trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Main Pages Smoke tests › Should load Login page" classname="functional/smoke/smoke.spec.ts" time="0.198">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/smoke-smoke-Main-Pages-Smoke-tests-Should-load-Login-page-functional/trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Main Pages Smoke tests › Should load Register page" classname="functional/smoke/smoke.spec.ts" time="0.243">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/smoke-smoke-Main-Pages-Smoke-tests-Should-load-Register-page-functional/trace.zip]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+</testsuites>
