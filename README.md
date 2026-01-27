@@ -1,8 +1,6 @@
 # GAD MCP Copilot - Playwright Testing Framework
 
-[![Playwright CI](https://github.com/bike7/gad-mcp-copilot/actions/workflows/playwright.yml/badge.svg)](
-https://github.com/bike7/gad-mcp-copilot/actions/workflows/playwright.yml
-)
+[![Playwright CI](https://github.com/bike7/gad-mcp-copilot/actions/workflows/playwright.yml/badge.svg)](https://github.com/bike7/gad-mcp-copilot/actions/workflows/playwright.yml)
 
 Link to report: [Playwright report](https://bike7.github.io/gad-mcp-copilot/)
 
