@@ -90,8 +90,6 @@ jobs:
           mkdir -p gh-pages-deploy
           cp -r allure-report gh-pages-deploy/allure
           cp -r playwright-report gh-pages-deploy/playwright
-          cp -r lighthouse-reports gh-pages-deploy/lighthouse
-          cp -r accessibility-reports gh-pages-deploy/accessibility
           cat > gh-pages-deploy/index.html << 'EOF'
           <!DOCTYPE html>
           <html lang="en">
@@ -113,8 +111,6 @@ jobs:
               <div class="report-links">
                   <a href="allure/index.html" class="report-link">📊 Allure Report</a>
                   <a href="playwright/index.html" class="report-link">🎭 Playwright Report</a>
-                  <a href="lighthouse/lighthouse-report-home-page.html" class="report-link">🔦 Lighthouse Reports</a>
-                  <a href="accessibility/accessibility-report-home-page.html" class="report-link">♿ Accessibility Reports (Axe)</a>
               </div>
           </body>
           </html>
