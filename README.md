@@ -2,13 +2,13 @@
 
 Experimental test automation framework designed to showcase the possibilities of AI-assisted testing rather than full product coverage. It combines functional and non-functional testing using Playwright, GitHub Copilot and Playwright MCP. Functional tests are split into smoke, integration and end-to-end suites and are fully reported in Allure. The framework also includes non-functional testing, such as Playwright built-in visual regression testing, accessibility testing with Axe, and accessibility and performance audits using Google Lighthouse. Axe and Lighthouse reports are generated for each main page, along with consolidated summary reports. The framework is intentionally lightweight and focused on demonstrating modern, AI-assisted automation approaches rather than being a large-scale test suite.
 
-[![Functional tests](https://github.com/bike7/gad-mcp-copilot/actions/workflows/functional_workflow.yml/badge.svg)](https://github.com/bike7/gad-mcp-copilot/actions/workflows/functional_workflow.yml)
+Functional tests status: [![Functional tests](https://github.com/bike7/gad-mcp-copilot/actions/workflows/functional_workflow.yml/badge.svg)](https://github.com/bike7/gad-mcp-copilot/actions/workflows/functional_workflow.yml)
 
 Links to reports:
 🎭[ Playwright report ](https://bike7.github.io/gad-mcp-copilot/playwright/functional)
 📄[ Allure Report ](https://bike7.github.io/gad-mcp-copilot/allure/)
 
-[![Nonfunctional tests](https://github.com/bike7/gad-mcp-copilot/actions/workflows/nonfunctional_workflow.yml/badge.svg)](https://github.com/bike7/gad-mcp-copilot/actions/workflows/nonfunctional_workflow.yml)
+Non-functional tests status: [![Nonfunctional tests](https://github.com/bike7/gad-mcp-copilot/actions/workflows/nonfunctional_workflow.yml/badge.svg)](https://github.com/bike7/gad-mcp-copilot/actions/workflows/nonfunctional_workflow.yml)
 
 Links to reports:
 🎭[ Playwright report ](https://bike7.github.io/gad-mcp-copilot/playwright/nonfunctional)
