@@ -1,6 +1,6 @@
-<testsuites id="" name="" tests="10" failures="4" skipped="0" errors="0" time="31.944542">
-<testsuite name="nonfunctional/accessibility.audit.spec.ts" timestamp="2026-01-28T10:29:45.724Z" hostname="nonfunctional" tests="3" failures="0" skipped="0" time="2.836" errors="0">
-<testcase name="Accessibility Audit › Home Page should meet accessibility standards" classname="nonfunctional/accessibility.audit.spec.ts" time="0.973">
+<testsuites id="" name="" tests="10" failures="4" skipped="0" errors="0" time="33.163101">
+<testsuite name="nonfunctional/accessibility.audit.spec.ts" timestamp="2026-01-28T10:36:06.373Z" hostname="nonfunctional" tests="3" failures="0" skipped="0" time="3.069" errors="0">
+<testcase name="Accessibility Audit › Home Page should meet accessibility standards" classname="nonfunctional/accessibility.audit.spec.ts" time="1.039">
 <system-out>
 <![CDATA[HTML report was saved into the following directory /home/runner/work/gad-mcp-copilot/gad-mcp-copilot/./accessibility-reports/accessibility-report-home-page.html
 
@@ -10,7 +10,7 @@
 ]]>
 </system-out>
 </testcase>
-<testcase name="Accessibility Audit › Login Page should meet accessibility standards" classname="nonfunctional/accessibility.audit.spec.ts" time="0.771">
+<testcase name="Accessibility Audit › Login Page should meet accessibility standards" classname="nonfunctional/accessibility.audit.spec.ts" time="0.857">
 <system-out>
 <![CDATA[HTML report was saved into the following directory /home/runner/work/gad-mcp-copilot/gad-mcp-copilot/./accessibility-reports/accessibility-report-login-page.html
 
@@ -20,7 +20,7 @@
 ]]>
 </system-out>
 </testcase>
-<testcase name="Accessibility Audit › Register Page should meet accessibility standards" classname="nonfunctional/accessibility.audit.spec.ts" time="1.092">
+<testcase name="Accessibility Audit › Register Page should meet accessibility standards" classname="nonfunctional/accessibility.audit.spec.ts" time="1.173">
 <system-out>
 <![CDATA[HTML report was saved into the following directory /home/runner/work/gad-mcp-copilot/gad-mcp-copilot/./accessibility-reports/accessibility-report-register-page.html
 
@@ -31,15 +31,15 @@
 </system-out>
 </testcase>
 </testsuite>
-<testsuite name="nonfunctional/performance.audit.spec.ts" timestamp="2026-01-28T10:29:45.724Z" hostname="nonfunctional" tests="3" failures="0" skipped="0" time="22.204" errors="0">
-<testcase name="Lighthouse Performance Audit › Home page should meet performance standards" classname="nonfunctional/performance.audit.spec.ts" time="8.71">
+<testsuite name="nonfunctional/performance.audit.spec.ts" timestamp="2026-01-28T10:36:06.373Z" hostname="nonfunctional" tests="3" failures="0" skipped="0" time="22.593" errors="0">
+<testcase name="Lighthouse Performance Audit › Home page should meet performance standards" classname="nonfunctional/performance.audit.spec.ts" time="9.062">
 <system-out>
 <![CDATA[
 
 [34m-------- playwright lighthouse audit reports --------[39m
 
 
-[92mperformance record is 59 and desired threshold was 50[39m
+[92mperformance record is 60 and desired threshold was 50[39m
 [92maccessibility record is 71 and desired threshold was 50[39m
 [92mbest-practices record is 100 and desired threshold was 100[39m
 [92mseo record is 57.99999999999999 and desired threshold was 50[39m
@@ -50,7 +50,7 @@
 ]]>
 </system-out>
 </testcase>
-<testcase name="Lighthouse Performance Audit › Login page should meet performance standards" classname="nonfunctional/performance.audit.spec.ts" time="6.419">
+<testcase name="Lighthouse Performance Audit › Login page should meet performance standards" classname="nonfunctional/performance.audit.spec.ts" time="6.531">
 <system-out>
 <![CDATA[
 
@@ -68,14 +68,14 @@
 ]]>
 </system-out>
 </testcase>
-<testcase name="Lighthouse Performance Audit › Register page should meet performance standards" classname="nonfunctional/performance.audit.spec.ts" time="7.075">
+<testcase name="Lighthouse Performance Audit › Register page should meet performance standards" classname="nonfunctional/performance.audit.spec.ts" time="7">
 <system-out>
 <![CDATA[
 
 [34m-------- playwright lighthouse audit reports --------[39m
 
 
-[92mperformance record is 67 and desired threshold was 50[39m
+[92mperformance record is 68 and desired threshold was 50[39m
 [92maccessibility record is 74 and desired threshold was 50[39m
 [92mbest-practices record is 74 and desired threshold was 70[39m
 [92mseo record is 57.99999999999999 and desired threshold was 50[39m
@@ -87,8 +87,8 @@
 </system-out>
 </testcase>
 </testsuite>
-<testsuite name="nonfunctional/visual.spec.ts" timestamp="2026-01-28T10:29:45.724Z" hostname="nonfunctional" tests="4" failures="4" skipped="0" time="2.355" errors="0">
-<testcase name="Visual tests › Home Page visual tests" classname="nonfunctional/visual.spec.ts" time="0.537">
+<testsuite name="nonfunctional/visual.spec.ts" timestamp="2026-01-28T10:36:06.373Z" hostname="nonfunctional" tests="4" failures="4" skipped="0" time="2.363" errors="0">
+<testcase name="Visual tests › Home Page visual tests" classname="nonfunctional/visual.spec.ts" time="0.511">
 <failure message="visual.spec.ts:7:7 Home Page visual tests" type="FAILURE">
 <![CDATA[  [nonfunctional] › nonfunctional/visual.spec.ts:7:7 › Visual tests › Home Page visual tests ───────
 
@@ -131,7 +131,7 @@
 ]]>
 </system-out>
 </testcase>
-<testcase name="Visual tests › Login Page visual tests" classname="nonfunctional/visual.spec.ts" time="0.577">
+<testcase name="Visual tests › Login Page visual tests" classname="nonfunctional/visual.spec.ts" time="0.555">
 <failure message="visual.spec.ts:14:7 Login Page visual tests" type="FAILURE">
 <![CDATA[  [nonfunctional] › nonfunctional/visual.spec.ts:14:7 › Visual tests › Login Page visual tests ─────
 
@@ -174,7 +174,7 @@
 ]]>
 </system-out>
 </testcase>
-<testcase name="Visual tests › Register Page visual tests (masking)" classname="nonfunctional/visual.spec.ts" time="0.622">
+<testcase name="Visual tests › Register Page visual tests (masking)" classname="nonfunctional/visual.spec.ts" time="0.655">
 <failure message="visual.spec.ts:22:7 Register Page visual tests (masking)" type="FAILURE">
 <![CDATA[  [nonfunctional] › nonfunctional/visual.spec.ts:22:7 › Visual tests › Register Page visual tests (masking) 
 
@@ -217,7 +217,7 @@
 ]]>
 </system-out>
 </testcase>
-<testcase name="Visual tests › Register Page visual tests (mocking)" classname="nonfunctional/visual.spec.ts" time="0.619">
+<testcase name="Visual tests › Register Page visual tests (mocking)" classname="nonfunctional/visual.spec.ts" time="0.642">
 <failure message="visual.spec.ts:34:7 Register Page visual tests (mocking)" type="FAILURE">
 <![CDATA[  [nonfunctional] › nonfunctional/visual.spec.ts:34:7 › Visual tests › Register Page visual tests (mocking) 
 
