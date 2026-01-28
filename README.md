@@ -1,12 +1,20 @@
 # GAD MCP Copilot - Playwright Testing Framework
 
-[![Playwright CI](https://github.com/bike7/gad-mcp-copilot/actions/workflows/playwright.yml/badge.svg)](https://github.com/bike7/gad-mcp-copilot/actions/workflows/playwright.yml)
+Experimental test automation framework designed to showcase the possibilities of AI-assisted testing rather than full product coverage. It combines functional and non-functional testing using Playwright, GitHub Copilot and Playwright MCP. Functional tests are split into smoke, integration and end-to-end suites and are fully reported in Allure. The framework also includes non-functional testing, such as Playwright built-in visual regression testing, accessibility testing with Axe, and accessibility and performance audits using Google Lighthouse. Axe and Lighthouse reports are generated for each main page, along with consolidated summary reports. The framework is intentionally lightweight and focused on demonstrating modern, AI-assisted automation approaches rather than being a large-scale test suite.
+
+[![Functional tests](https://github.com/bike7/gad-mcp-copilot/actions/workflows/functional_workflow.yml/badge.svg)](https://github.com/bike7/gad-mcp-copilot/actions/workflows/functional_workflow.yml)
 
 Links to reports:
-🎭[ Playwright report ](https://bike7.github.io/gad-mcp-copilot/playwright/)
+🎭[ Playwright report ](https://bike7.github.io/gad-mcp-copilot/playwright/functional)
 📄[ Allure Report ](https://bike7.github.io/gad-mcp-copilot/allure/)
 
-A comprehensive end-to-end testing framework built with Playwright, featuring functional and non-functional tests, multiple reporting options and accessibility testing capabilities.
+[![Nonfunctional tests](https://github.com/bike7/gad-mcp-copilot/actions/workflows/nonfunctional_workflow.yml/badge.svg)](https://github.com/bike7/gad-mcp-copilot/actions/workflows/nonfunctional_workflow.yml)
+
+Links to reports:
+🎭[ Playwright report ](https://bike7.github.io/gad-mcp-copilot/playwright/nonfunctional)
+🪓[ Axe Accessibility Report ](https://bike7.github.io/gad-mcp-copilot/accessibility/)
+🗼[ Google Lighthouse Accessibility/Performance Report ](https://bike7.github.io/gad-mcp-copilot/lighthouse/)
+
 
 ## GAD Application
 
