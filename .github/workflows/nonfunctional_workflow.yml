@@ -6,7 +6,6 @@ on:
 permissions:
   contents: write
   checks: write
-  id-token: write  
 
 jobs:
   run-tests:
