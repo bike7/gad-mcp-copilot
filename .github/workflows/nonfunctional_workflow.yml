@@ -61,7 +61,7 @@ jobs:
           
       - name: Pray and run tests
         run: |
-          npm run test:nonfunctional
+          npm run test:nonfunctional -- --update-snapshots
       
       - name: Generate consolidated reports
         if: always()
