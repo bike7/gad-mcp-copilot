@@ -1,4 +1,4 @@
-name: Playwright tests
+name: Non-Functional Tests
 
 on:
   workflow_dispatch:
@@ -6,7 +6,6 @@ on:
 permissions:
   contents: write
   checks: write
-  id-token: write  
 
 jobs:
   run-tests:
@@ -15,7 +14,7 @@ jobs:
 
     steps:
       - name: ⬇️ Checkout test repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
 
       - name: ⬇️ Clone GAD application repository via Git
@@ -60,13 +59,15 @@ jobs:
         run: |
           npx playwright install --with-deps chromium
           
-      - name: Run Playwright tests
+      - name: Pray and run tests
         run: |
-          npm run test:functional
-          
-      - name: Generate Allure Report
+          npm run test:nonfunctional
+      
+      - name: Generate consolidated reports
+        if: always()
         run: |
-          npm run report:allure:generate
+          npm run report:accessibility:generate
+          npm run report:lighthouse:generate
           
       - name: Archive Test Results
         if: always()
@@ -76,7 +77,9 @@ jobs:
           path: |
             **/playwright-report/** 
             **/test-results/**
-            **/allure-results/**
+            **/accessibility-reports/**
+            **/lighthouse-reports/**
+
             
       - name: Publish Test Report
         uses: mikepenz/action-junit-report@v5
@@ -87,9 +90,21 @@ jobs:
       - name: Prepare GitHub Pages deployment
         if: always()
         run: |
-          mkdir -p gh-pages-deploy
-          cp -r allure-report gh-pages-deploy/allure
-          cp -r playwright-report gh-pages-deploy/playwright
+          mkdir -p gh-pages-deploy/playwright/nonfunctional
+          mkdir -p gh-pages-deploy/accessibility
+          mkdir -p gh-pages-deploy/lighthouse
+          
+          # Copy Playwright report to /playwright/nonfunctional
+          cp -r playwright-report/* gh-pages-deploy/playwright/nonfunctional/
+          
+          # Copy accessibility reports
+          cp accessibility-reports/consolidated-report.html gh-pages-deploy/accessibility/index.html
+          cp accessibility-reports/*.html gh-pages-deploy/accessibility/
+          
+          # Copy lighthouse reports  
+          cp lighthouse-reports/consolidated-report.html gh-pages-deploy/lighthouse/index.html
+          cp lighthouse-reports/*.html gh-pages-deploy/lighthouse/
+          cp lighthouse-reports/*.json gh-pages-deploy/lighthouse/ || true
 
       - name: Deploy reports to GitHub Pages
         if: always()
@@ -98,3 +113,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./gh-pages-deploy
           publish_branch: gh-pages
+          keep_files: true
