@@ -1,0 +1,460 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessibility Reports - All Pages</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+        .reports-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .report-summary {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .report-summary h2 {
+            margin-top: 0;
+            color: #1a73e8;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 10px;
+        }
+        .page-url {
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 15px;
+            word-break: break-all;
+        }
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .metric-card {
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            border: 2px solid;
+        }
+        .metric-total {
+            background: #fff8e1;
+            border-color: #ffa726;
+        }
+        .metric-critical {
+            background: #ffebee;
+            border-color: #ef5350;
+        }
+        .metric-serious {
+            background: #fff3e0;
+            border-color: #ff9800;
+        }
+        .metric-moderate {
+            background: #fff9e6;
+            border-color: #ffc107;
+        }
+        .metric-minor {
+            background: #e8f5e9;
+            border-color: #66bb6a;
+        }
+        .metric-value {
+            font-size: 32px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        .metric-label {
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .violations-list {
+            margin-top: 20px;
+        }
+        .violations-header {
+            font-size: 16px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .violation-item {
+            background: #f9f9f9;
+            padding: 10px;
+            margin-bottom: 8px;
+            border-radius: 4px;
+            border-left: 4px solid;
+            font-size: 14px;
+        }
+        .violation-critical { border-left-color: #ef5350; }
+        .violation-serious { border-left-color: #ff9800; }
+        .violation-moderate { border-left-color: #ffc107; }
+        .violation-minor { border-left-color: #66bb6a; }
+        .violation-description {
+            font-weight: 500;
+            color: #333;
+        }
+        .violation-meta {
+            font-size: 12px;
+            color: #666;
+            margin-top: 5px;
+        }
+        .impact-badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 3px;
+            font-weight: 600;
+            font-size: 11px;
+            text-transform: uppercase;
+            margin-right: 8px;
+        }
+        .badge-critical {
+            background: #ef5350;
+            color: white;
+        }
+        .badge-serious {
+            background: #ff9800;
+            color: white;
+        }
+        .badge-moderate {
+            background: #ffc107;
+            color: #333;
+        }
+        .badge-minor {
+            background: #66bb6a;
+            color: white;
+        }
+        .view-link {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #1a73e8;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-top: 15px;
+            font-size: 14px;
+        }
+        .view-link:hover {
+            background: #1557b0;
+        }
+        .timestamp {
+            text-align: center;
+            color: #5f6368;
+            margin-top: 30px;
+            font-size: 14px;
+        }
+        .summary-section {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .summary-section h3 {
+            margin: 0 0 10px 0;
+            color: #1565c0;
+        }
+        .summary-stats {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        .summary-stat {
+            font-size: 14px;
+        }
+        .summary-stat strong {
+            font-size: 18px;
+            display: block;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="reports-container">
+        <h1>Accessibility Audit Reports (Axe-Core)</h1>
+        <p class="subtitle">Web Content Accessibility Guidelines (WCAG) Compliance Analysis</p>
+        
+        
+                <div class="report-summary">
+                    <h2>Home Page</h2>
+                    <div class="page-url">URL: http://localhost:3000/</div>
+                    
+                    <div class="metrics">
+                        <div class="metric-card metric-total">
+                            <div class="metric-label">Total Violations</div>
+                            <div class="metric-value">19</div>
+                        </div>
+                        <div class="metric-card metric-critical">
+                            <div class="metric-label">Critical</div>
+                            <div class="metric-value">1</div>
+                        </div>
+                        <div class="metric-card metric-serious">
+                            <div class="metric-label">Serious</div>
+                            <div class="metric-value">5</div>
+                        </div>
+                        <div class="metric-card metric-moderate">
+                            <div class="metric-label">Moderate</div>
+                            <div class="metric-value">12</div>
+                        </div>
+                        <div class="metric-card metric-minor">
+                            <div class="metric-label">Minor</div>
+                            <div class="metric-value">1</div>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="violations-list">
+                        <div class="violations-header">Top Violations:</div>
+                        
+                            <div class="violation-item violation-critical">
+                                <div class="violation-description">Buttons must have discernible text</div>
+                                <div class="violation-meta">
+                                    <span class="impact-badge badge-critical">critical</span>
+                                    <span>Rule ID: button-name</span>
+                                    <span>• Count: 1</span>
+                                </div>
+                            </div>
+                        
+                            <div class="violation-item violation-serious">
+                                <div class="violation-description">Elements must meet minimum color contrast ratio thresholds</div>
+                                <div class="violation-meta">
+                                    <span class="impact-badge badge-serious">serious</span>
+                                    <span>Rule ID: color-contrast</span>
+                                    <span>• Count: 2</span>
+                                </div>
+                            </div>
+                        
+                            <div class="violation-item violation-serious">
+                                <div class="violation-description">&lt;html&gt; element must have a lang attribute</div>
+                                <div class="violation-meta">
+                                    <span class="impact-badge badge-serious">serious</span>
+                                    <span>Rule ID: html-has-lang</span>
+                                    <span>• Count: 1</span>
+                                </div>
+                            </div>
+                        
+                            <div class="violation-item violation-moderate">
+                                <div class="violation-description">Document should have one main landmark</div>
+                                <div class="violation-meta">
+                                    <span class="impact-badge badge-moderate">moderate</span>
+                                    <span>Rule ID: landmark-one-main</span>
+                                    <span>• Count: 1</span>
+                                </div>
+                            </div>
+                        
+                            <div class="violation-item violation-serious">
+                                <div class="violation-description">Links must be distinguishable without relying on color</div>
+                                <div class="violation-meta">
+                                    <span class="impact-badge badge-serious">serious</span>
+                                    <span>Rule ID: link-in-text-block</span>
+                                    <span>• Count: 2</span>
+                                </div>
+                            </div>
+                        
+                        <p style="font-size: 13px; color: #666; margin-top: 10px;">And 2 more violations...</p>
+                    </div>
+                    
+                    
+                    <a href="accessibility-report-home-page.html" class="view-link" target="_blank">
+                        View Detailed Report →
+                    </a>
+                </div>
+            
+                <div class="report-summary">
+                    <h2>Login Page</h2>
+                    <div class="page-url">URL: http://localhost:3000/login/</div>
+                    
+                    <div class="metrics">
+                        <div class="metric-card metric-total">
+                            <div class="metric-label">Total Violations</div>
+                            <div class="metric-value">19</div>
+                        </div>
+                        <div class="metric-card metric-critical">
+                            <div class="metric-label">Critical</div>
+                            <div class="metric-value">1</div>
+                        </div>
+                        <div class="metric-card metric-serious">
+                            <div class="metric-label">Serious</div>
+                            <div class="metric-value">11</div>
+                        </div>
+                        <div class="metric-card metric-moderate">
+                            <div class="metric-label">Moderate</div>
+                            <div class="metric-value">7</div>
+                        </div>
+                        <div class="metric-card metric-minor">
+                            <div class="metric-label">Minor</div>
+                            <div class="metric-value">0</div>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="violations-list">
+                        <div class="violations-header">Top Violations:</div>
+                        
+                            <div class="violation-item violation-critical">
+                                <div class="violation-description">Buttons must have discernible text</div>
+                                <div class="violation-meta">
+                                    <span class="impact-badge badge-critical">critical</span>
+                                    <span>Rule ID: button-name</span>
+                                    <span>• Count: 1</span>
+                                </div>
+                            </div>
+                        
+                            <div class="violation-item violation-serious">
+                                <div class="violation-description">Elements must meet minimum color contrast ratio thresholds</div>
+                                <div class="violation-meta">
+                                    <span class="impact-badge badge-serious">serious</span>
+                                    <span>Rule ID: color-contrast</span>
+                                    <span>• Count: 7</span>
+                                </div>
+                            </div>
+                        
+                            <div class="violation-item violation-serious">
+                                <div class="violation-description">&lt;html&gt; element must have a lang attribute</div>
+                                <div class="violation-meta">
+                                    <span class="impact-badge badge-serious">serious</span>
+                                    <span>Rule ID: html-has-lang</span>
+                                    <span>• Count: 1</span>
+                                </div>
+                            </div>
+                        
+                            <div class="violation-item violation-moderate">
+                                <div class="violation-description">Document should have one main landmark</div>
+                                <div class="violation-meta">
+                                    <span class="impact-badge badge-moderate">moderate</span>
+                                    <span>Rule ID: landmark-one-main</span>
+                                    <span>• Count: 1</span>
+                                </div>
+                            </div>
+                        
+                            <div class="violation-item violation-serious">
+                                <div class="violation-description">Links must be distinguishable without relying on color</div>
+                                <div class="violation-meta">
+                                    <span class="impact-badge badge-serious">serious</span>
+                                    <span>Rule ID: link-in-text-block</span>
+                                    <span>• Count: 3</span>
+                                </div>
+                            </div>
+                        
+                        <p style="font-size: 13px; color: #666; margin-top: 10px;">And 1 more violations...</p>
+                    </div>
+                    
+                    
+                    <a href="accessibility-report-login-page.html" class="view-link" target="_blank">
+                        View Detailed Report →
+                    </a>
+                </div>
+            
+                <div class="report-summary">
+                    <h2>Register Page</h2>
+                    <div class="page-url">URL: http://localhost:3000/register.html</div>
+                    
+                    <div class="metrics">
+                        <div class="metric-card metric-total">
+                            <div class="metric-label">Total Violations</div>
+                            <div class="metric-value">22</div>
+                        </div>
+                        <div class="metric-card metric-critical">
+                            <div class="metric-label">Critical</div>
+                            <div class="metric-value">2</div>
+                        </div>
+                        <div class="metric-card metric-serious">
+                            <div class="metric-label">Serious</div>
+                            <div class="metric-value">11</div>
+                        </div>
+                        <div class="metric-card metric-moderate">
+                            <div class="metric-label">Moderate</div>
+                            <div class="metric-value">9</div>
+                        </div>
+                        <div class="metric-card metric-minor">
+                            <div class="metric-label">Minor</div>
+                            <div class="metric-value">0</div>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="violations-list">
+                        <div class="violations-header">Top Violations:</div>
+                        
+                            <div class="violation-item violation-critical">
+                                <div class="violation-description">Buttons must have discernible text</div>
+                                <div class="violation-meta">
+                                    <span class="impact-badge badge-critical">critical</span>
+                                    <span>Rule ID: button-name</span>
+                                    <span>• Count: 1</span>
+                                </div>
+                            </div>
+                        
+                            <div class="violation-item violation-serious">
+                                <div class="violation-description">Elements must meet minimum color contrast ratio thresholds</div>
+                                <div class="violation-meta">
+                                    <span class="impact-badge badge-serious">serious</span>
+                                    <span>Rule ID: color-contrast</span>
+                                    <span>• Count: 7</span>
+                                </div>
+                            </div>
+                        
+                            <div class="violation-item violation-serious">
+                                <div class="violation-description">&lt;html&gt; element must have a lang attribute</div>
+                                <div class="violation-meta">
+                                    <span class="impact-badge badge-serious">serious</span>
+                                    <span>Rule ID: html-has-lang</span>
+                                    <span>• Count: 1</span>
+                                </div>
+                            </div>
+                        
+                            <div class="violation-item violation-moderate">
+                                <div class="violation-description">Document should have one main landmark</div>
+                                <div class="violation-meta">
+                                    <span class="impact-badge badge-moderate">moderate</span>
+                                    <span>Rule ID: landmark-one-main</span>
+                                    <span>• Count: 1</span>
+                                </div>
+                            </div>
+                        
+                            <div class="violation-item violation-serious">
+                                <div class="violation-description">Links must be distinguishable without relying on color</div>
+                                <div class="violation-meta">
+                                    <span class="impact-badge badge-serious">serious</span>
+                                    <span>Rule ID: link-in-text-block</span>
+                                    <span>• Count: 3</span>
+                                </div>
+                            </div>
+                        
+                        <p style="font-size: 13px; color: #666; margin-top: 10px;">And 2 more violations...</p>
+                    </div>
+                    
+                    
+                    <a href="accessibility-report-register-page.html" class="view-link" target="_blank">
+                        View Detailed Report →
+                    </a>
+                </div>
+            
+        
+        <div class="timestamp">
+            Generated: 1/28/2026, 10:06:48 AM
+        </div>
+    </div>
+</body>
+</html>
