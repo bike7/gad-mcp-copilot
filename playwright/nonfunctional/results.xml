@@ -1,6 +1,6 @@
-<testsuites id="" name="" tests="10" failures="4" skipped="0" errors="0" time="33.163101">
-<testsuite name="nonfunctional/accessibility.audit.spec.ts" timestamp="2026-01-28T10:36:06.373Z" hostname="nonfunctional" tests="3" failures="0" skipped="0" time="3.069" errors="0">
-<testcase name="Accessibility Audit › Home Page should meet accessibility standards" classname="nonfunctional/accessibility.audit.spec.ts" time="1.039">
+<testsuites id="" name="" tests="10" failures="0" skipped="0" errors="0" time="30.425048">
+<testsuite name="nonfunctional/accessibility.audit.spec.ts" timestamp="2026-01-28T10:39:38.019Z" hostname="nonfunctional" tests="3" failures="0" skipped="0" time="3.249" errors="0">
+<testcase name="Accessibility Audit › Home Page should meet accessibility standards" classname="nonfunctional/accessibility.audit.spec.ts" time="1.035">
 <system-out>
 <![CDATA[HTML report was saved into the following directory /home/runner/work/gad-mcp-copilot/gad-mcp-copilot/./accessibility-reports/accessibility-report-home-page.html
 
@@ -10,7 +10,7 @@
 ]]>
 </system-out>
 </testcase>
-<testcase name="Accessibility Audit › Login Page should meet accessibility standards" classname="nonfunctional/accessibility.audit.spec.ts" time="0.857">
+<testcase name="Accessibility Audit › Login Page should meet accessibility standards" classname="nonfunctional/accessibility.audit.spec.ts" time="0.808">
 <system-out>
 <![CDATA[HTML report was saved into the following directory /home/runner/work/gad-mcp-copilot/gad-mcp-copilot/./accessibility-reports/accessibility-report-login-page.html
 
@@ -20,7 +20,7 @@
 ]]>
 </system-out>
 </testcase>
-<testcase name="Accessibility Audit › Register Page should meet accessibility standards" classname="nonfunctional/accessibility.audit.spec.ts" time="1.173">
+<testcase name="Accessibility Audit › Register Page should meet accessibility standards" classname="nonfunctional/accessibility.audit.spec.ts" time="1.406">
 <system-out>
 <![CDATA[HTML report was saved into the following directory /home/runner/work/gad-mcp-copilot/gad-mcp-copilot/./accessibility-reports/accessibility-report-register-page.html
 
@@ -31,15 +31,15 @@
 </system-out>
 </testcase>
 </testsuite>
-<testsuite name="nonfunctional/performance.audit.spec.ts" timestamp="2026-01-28T10:36:06.373Z" hostname="nonfunctional" tests="3" failures="0" skipped="0" time="22.593" errors="0">
-<testcase name="Lighthouse Performance Audit › Home page should meet performance standards" classname="nonfunctional/performance.audit.spec.ts" time="9.062">
+<testsuite name="nonfunctional/performance.audit.spec.ts" timestamp="2026-01-28T10:39:38.019Z" hostname="nonfunctional" tests="3" failures="0" skipped="0" time="22.649" errors="0">
+<testcase name="Lighthouse Performance Audit › Home page should meet performance standards" classname="nonfunctional/performance.audit.spec.ts" time="9.031">
 <system-out>
 <![CDATA[
 
 [34m-------- playwright lighthouse audit reports --------[39m
 
 
-[92mperformance record is 60 and desired threshold was 50[39m
+[92mperformance record is 59 and desired threshold was 50[39m
 [92maccessibility record is 71 and desired threshold was 50[39m
 [92mbest-practices record is 100 and desired threshold was 100[39m
 [92mseo record is 57.99999999999999 and desired threshold was 50[39m
@@ -50,7 +50,7 @@
 ]]>
 </system-out>
 </testcase>
-<testcase name="Lighthouse Performance Audit › Login page should meet performance standards" classname="nonfunctional/performance.audit.spec.ts" time="6.531">
+<testcase name="Lighthouse Performance Audit › Login page should meet performance standards" classname="nonfunctional/performance.audit.spec.ts" time="6.59">
 <system-out>
 <![CDATA[
 
@@ -68,7 +68,7 @@
 ]]>
 </system-out>
 </testcase>
-<testcase name="Lighthouse Performance Audit › Register page should meet performance standards" classname="nonfunctional/performance.audit.spec.ts" time="7">
+<testcase name="Lighthouse Performance Audit › Register page should meet performance standards" classname="nonfunctional/performance.audit.spec.ts" time="7.028">
 <system-out>
 <![CDATA[
 
@@ -87,174 +87,50 @@
 </system-out>
 </testcase>
 </testsuite>
-<testsuite name="nonfunctional/visual.spec.ts" timestamp="2026-01-28T10:36:06.373Z" hostname="nonfunctional" tests="4" failures="4" skipped="0" time="2.363" errors="0">
-<testcase name="Visual tests › Home Page visual tests" classname="nonfunctional/visual.spec.ts" time="0.511">
-<failure message="visual.spec.ts:7:7 Home Page visual tests" type="FAILURE">
-<![CDATA[  [nonfunctional] › nonfunctional/visual.spec.ts:7:7 › Visual tests › Home Page visual tests ───────
-
-    Error: A snapshot doesn't exist at /home/runner/work/gad-mcp-copilot/gad-mcp-copilot/tests/nonfunctional/snapshots/Visual-tests-Home-Page-visual-tests-1.png, writing actual.
-
-       9 |     await new HomePage(page).goto();
-      10 |     // Act & Assert
-    > 11 |     await expect(page).toHaveScreenshot({ fullPage: true });
-         |     ^
-      12 |   });
-      13 |
-      14 |   test('Login Page visual tests', async ({ page }) => {
-        at /home/runner/work/gad-mcp-copilot/gad-mcp-copilot/tests/nonfunctional/visual.spec.ts:11:5
-
-    attachment #1: Visual-tests-Home-Page-visual-tests-1 (image/png) ───────────────────────────────
-    Expected: nonfunctional/snapshots/Visual-tests-Home-Page-visual-tests-1.png
-    Received: ../test-results/visual-Visual-tests-Home-Page-visual-tests-nonfunctional/Visual-tests-Home-Page-visual-tests-1-actual.png
-    ────────────────────────────────────────────────────────────────────────────────────────────────
-
-    Error Context: ../test-results/visual-Visual-tests-Home-Page-visual-tests-nonfunctional/error-context.md
-
-    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
-    ../test-results/visual-Visual-tests-Home-Page-visual-tests-nonfunctional/trace.zip
-    Usage:
-
-        npx playwright show-trace ../test-results/visual-Visual-tests-Home-Page-visual-tests-nonfunctional/trace.zip
-
-    ────────────────────────────────────────────────────────────────────────────────────────────────
-]]>
-</failure>
+<testsuite name="nonfunctional/visual.spec.ts" timestamp="2026-01-28T10:39:38.019Z" hostname="nonfunctional" tests="4" failures="0" skipped="0" time="1.963" errors="0">
+<testcase name="Visual tests › Home Page visual tests" classname="nonfunctional/visual.spec.ts" time="0.504">
 <system-out>
-<![CDATA[
+<![CDATA[A snapshot doesn't exist at /home/runner/work/gad-mcp-copilot/gad-mcp-copilot/tests/nonfunctional/snapshots/Visual-tests-Home-Page-visual-tests-1.png, writing actual.
+
 [[ATTACHMENT|../tests/nonfunctional/snapshots/Visual-tests-Home-Page-visual-tests-1.png]]
 
 [[ATTACHMENT|../test-results/visual-Visual-tests-Home-Page-visual-tests-nonfunctional/Visual-tests-Home-Page-visual-tests-1-actual.png]]
-
-[[ATTACHMENT|../test-results/visual-Visual-tests-Home-Page-visual-tests-nonfunctional/error-context.md]]
 
 [[ATTACHMENT|../test-results/visual-Visual-tests-Home-Page-visual-tests-nonfunctional/trace.zip]]
 ]]>
 </system-out>
 </testcase>
-<testcase name="Visual tests › Login Page visual tests" classname="nonfunctional/visual.spec.ts" time="0.555">
-<failure message="visual.spec.ts:14:7 Login Page visual tests" type="FAILURE">
-<![CDATA[  [nonfunctional] › nonfunctional/visual.spec.ts:14:7 › Visual tests › Login Page visual tests ─────
-
-    Error: A snapshot doesn't exist at /home/runner/work/gad-mcp-copilot/gad-mcp-copilot/tests/nonfunctional/snapshots/Visual-tests-Login-Page-visual-tests-1.png, writing actual.
-
-      17 |     const loginForm = page.locator('form');
-      18 |     // Act & Assert
-    > 19 |     await expect(loginForm).toHaveScreenshot();
-         |     ^
-      20 |   });
-      21 |
-      22 |   test('Register Page visual tests (masking)', async ({ page }) => {
-        at /home/runner/work/gad-mcp-copilot/gad-mcp-copilot/tests/nonfunctional/visual.spec.ts:19:5
-
-    attachment #1: Visual-tests-Login-Page-visual-tests-1 (image/png) ──────────────────────────────
-    Expected: nonfunctional/snapshots/Visual-tests-Login-Page-visual-tests-1.png
-    Received: ../test-results/visual-Visual-tests-Login-Page-visual-tests-nonfunctional/Visual-tests-Login-Page-visual-tests-1-actual.png
-    ────────────────────────────────────────────────────────────────────────────────────────────────
-
-    Error Context: ../test-results/visual-Visual-tests-Login-Page-visual-tests-nonfunctional/error-context.md
-
-    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
-    ../test-results/visual-Visual-tests-Login-Page-visual-tests-nonfunctional/trace.zip
-    Usage:
-
-        npx playwright show-trace ../test-results/visual-Visual-tests-Login-Page-visual-tests-nonfunctional/trace.zip
-
-    ────────────────────────────────────────────────────────────────────────────────────────────────
-]]>
-</failure>
+<testcase name="Visual tests › Login Page visual tests" classname="nonfunctional/visual.spec.ts" time="0.44">
 <system-out>
-<![CDATA[
+<![CDATA[A snapshot doesn't exist at /home/runner/work/gad-mcp-copilot/gad-mcp-copilot/tests/nonfunctional/snapshots/Visual-tests-Login-Page-visual-tests-1.png, writing actual.
+
 [[ATTACHMENT|../tests/nonfunctional/snapshots/Visual-tests-Login-Page-visual-tests-1.png]]
 
 [[ATTACHMENT|../test-results/visual-Visual-tests-Login-Page-visual-tests-nonfunctional/Visual-tests-Login-Page-visual-tests-1-actual.png]]
-
-[[ATTACHMENT|../test-results/visual-Visual-tests-Login-Page-visual-tests-nonfunctional/error-context.md]]
 
 [[ATTACHMENT|../test-results/visual-Visual-tests-Login-Page-visual-tests-nonfunctional/trace.zip]]
 ]]>
 </system-out>
 </testcase>
-<testcase name="Visual tests › Register Page visual tests (masking)" classname="nonfunctional/visual.spec.ts" time="0.655">
-<failure message="visual.spec.ts:22:7 Register Page visual tests (masking)" type="FAILURE">
-<![CDATA[  [nonfunctional] › nonfunctional/visual.spec.ts:22:7 › Visual tests › Register Page visual tests (masking) 
-
-    Error: A snapshot doesn't exist at /home/runner/work/gad-mcp-copilot/gad-mcp-copilot/tests/nonfunctional/snapshots/Visual-tests-Register-Page-visual-tests-masking-1.png, writing actual.
-
-      27 |     const userAvatarSelect = page.locator('select#avatar');
-      28 |     // Act & Assert
-    > 29 |     await expect(registerForm).toHaveScreenshot({
-         |     ^
-      30 |       mask: [userAvatarImage, userAvatarSelect],
-      31 |     });
-      32 |   });
-        at /home/runner/work/gad-mcp-copilot/gad-mcp-copilot/tests/nonfunctional/visual.spec.ts:29:5
-
-    attachment #1: Visual-tests-Register-Page-visual-tests-masking-1 (image/png) ───────────────────
-    Expected: nonfunctional/snapshots/Visual-tests-Register-Page-visual-tests-masking-1.png
-    Received: ../test-results/visual-Visual-tests-Register-Page-visual-tests-masking--nonfunctional/Visual-tests-Register-Page-visual-tests-masking-1-actual.png
-    ────────────────────────────────────────────────────────────────────────────────────────────────
-
-    Error Context: ../test-results/visual-Visual-tests-Register-Page-visual-tests-masking--nonfunctional/error-context.md
-
-    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
-    ../test-results/visual-Visual-tests-Register-Page-visual-tests-masking--nonfunctional/trace.zip
-    Usage:
-
-        npx playwright show-trace ../test-results/visual-Visual-tests-Register-Page-visual-tests-masking--nonfunctional/trace.zip
-
-    ────────────────────────────────────────────────────────────────────────────────────────────────
-]]>
-</failure>
+<testcase name="Visual tests › Register Page visual tests (masking)" classname="nonfunctional/visual.spec.ts" time="0.508">
 <system-out>
-<![CDATA[
+<![CDATA[A snapshot doesn't exist at /home/runner/work/gad-mcp-copilot/gad-mcp-copilot/tests/nonfunctional/snapshots/Visual-tests-Register-Page-visual-tests-masking-1.png, writing actual.
+
 [[ATTACHMENT|../tests/nonfunctional/snapshots/Visual-tests-Register-Page-visual-tests-masking-1.png]]
 
 [[ATTACHMENT|../test-results/visual-Visual-tests-Register-Page-visual-tests-masking--nonfunctional/Visual-tests-Register-Page-visual-tests-masking-1-actual.png]]
-
-[[ATTACHMENT|../test-results/visual-Visual-tests-Register-Page-visual-tests-masking--nonfunctional/error-context.md]]
 
 [[ATTACHMENT|../test-results/visual-Visual-tests-Register-Page-visual-tests-masking--nonfunctional/trace.zip]]
 ]]>
 </system-out>
 </testcase>
-<testcase name="Visual tests › Register Page visual tests (mocking)" classname="nonfunctional/visual.spec.ts" time="0.642">
-<failure message="visual.spec.ts:34:7 Register Page visual tests (mocking)" type="FAILURE">
-<![CDATA[  [nonfunctional] › nonfunctional/visual.spec.ts:34:7 › Visual tests › Register Page visual tests (mocking) 
-
-    Error: A snapshot doesn't exist at /home/runner/work/gad-mcp-copilot/gad-mcp-copilot/tests/nonfunctional/snapshots/Visual-tests-Register-Page-visual-tests-mocking-1.png, writing actual.
-
-      42 |     const registerForm = page.locator('form#registerForm');
-      43 |     // Assert
-    > 44 |     await expect(registerForm).toHaveScreenshot();
-         |     ^
-      45 |   });
-      46 | });
-      47 |
-        at /home/runner/work/gad-mcp-copilot/gad-mcp-copilot/tests/nonfunctional/visual.spec.ts:44:5
-
-    attachment #1: Visual-tests-Register-Page-visual-tests-mocking-1 (image/png) ───────────────────
-    Expected: nonfunctional/snapshots/Visual-tests-Register-Page-visual-tests-mocking-1.png
-    Received: ../test-results/visual-Visual-tests-Register-Page-visual-tests-mocking--nonfunctional/Visual-tests-Register-Page-visual-tests-mocking-1-actual.png
-    ────────────────────────────────────────────────────────────────────────────────────────────────
-
-    Error Context: ../test-results/visual-Visual-tests-Register-Page-visual-tests-mocking--nonfunctional/error-context.md
-
-    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
-    ../test-results/visual-Visual-tests-Register-Page-visual-tests-mocking--nonfunctional/trace.zip
-    Usage:
-
-        npx playwright show-trace ../test-results/visual-Visual-tests-Register-Page-visual-tests-mocking--nonfunctional/trace.zip
-
-    ────────────────────────────────────────────────────────────────────────────────────────────────
-]]>
-</failure>
+<testcase name="Visual tests › Register Page visual tests (mocking)" classname="nonfunctional/visual.spec.ts" time="0.511">
 <system-out>
-<![CDATA[
+<![CDATA[A snapshot doesn't exist at /home/runner/work/gad-mcp-copilot/gad-mcp-copilot/tests/nonfunctional/snapshots/Visual-tests-Register-Page-visual-tests-mocking-1.png, writing actual.
+
 [[ATTACHMENT|../tests/nonfunctional/snapshots/Visual-tests-Register-Page-visual-tests-mocking-1.png]]
 
 [[ATTACHMENT|../test-results/visual-Visual-tests-Register-Page-visual-tests-mocking--nonfunctional/Visual-tests-Register-Page-visual-tests-mocking-1-actual.png]]
-
-[[ATTACHMENT|../test-results/visual-Visual-tests-Register-Page-visual-tests-mocking--nonfunctional/error-context.md]]
 
 [[ATTACHMENT|../test-results/visual-Visual-tests-Register-Page-visual-tests-mocking--nonfunctional/trace.zip]]
 ]]>
